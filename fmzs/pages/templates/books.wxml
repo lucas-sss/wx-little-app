@@ -1,0 +1,23 @@
+<template name="books">
+  <block wx:for="{{array}}">
+    <view class="item" bindtap="seeDetail" id="{{item.id}}">
+      <view>
+        <image src="{{item.img}}" style="width:60px;height:80px;"></image>
+      </view>
+      <view class="overview">
+        <view class="title">{{item.title}}</view>
+        <view class="desc">{{item.desc}}</view>
+        <view class="mark">
+          <view class="mark-author">
+            <image src="/images/bookshelf-nav/author.png" style="width:12px;height:12px;"></image>
+            <text>{{item.author}}</text>
+          </view>
+          <view wx:if="{{item.finished}}" class="mark-finished">完本</view>
+          <view wx:else class="mark-unfinished">连载</view>
+          <view class="mark-catogry">{{item.flag}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="hr2"></view>
+  </block>
+</template>

@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/bookshelf/bookshelf",
+    "pages/person/person",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "飞马追书",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+
+  },
+  "tabBar": {
+    "selectedColor": "#1296DB",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "position":"bottom",
+    "list":[{
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_selected.png"
+      },{
+        "pagePath":"pages/bookshelf/bookshelf",
+        "text":"书架",
+        "iconPath": "images/bookshelf.png",
+        "selectedIconPath": "images/bookshelf_selected.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "我的",
+        "iconPath": "images/person.png",
+        "selectedIconPath": "images/person_selected.png"
+      }]
+  },
+  "sitemapLocation": "sitemap.json"
+}
