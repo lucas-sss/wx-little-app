@@ -5,6 +5,9 @@ Page({
   },
   onLoad: function () {
     //一个页面只会触发一次
+    this.setData({
+      systemInfo: app.globalData.systemInfo
+    })
   },
   onShow: function () {
     //每次页面发开触发

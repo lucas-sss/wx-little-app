@@ -1,0 +1,9 @@
+{
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "飞马追书-搜书",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  }
+}

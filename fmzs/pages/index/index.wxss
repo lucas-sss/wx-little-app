@@ -10,6 +10,10 @@
   font-size: 12px;
 }
 
+.nav-selected{
+  background-color: #1296db;
+}
+
 .head {
   display: flex;
   flex-direction: row;

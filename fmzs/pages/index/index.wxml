@@ -30,7 +30,7 @@
       </view>
       <view>完本</view>
     </view>
-    <view class="nav-item">
+    <view class="nav-item {{!isSelected ? '':'nav-selected'}}" bindtap="goSearch">
       <view>
         <image src="/images/index-nav/search-red.png" style="width:24px;height:24px;"></image>
       </view>

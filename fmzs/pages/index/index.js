@@ -1,7 +1,8 @@
 const app = getApp()
 Page({
   data: {
-    imgUrls: ["http://static.zongheng.com/upload/recommend/bf/d9/bfd932880e339a2f866ab74aee523f05.jpeg", "http://static.zongheng.com/upload/recommend/3d/e1/3de17f75c19809757c843db62ba6cf0d.jpeg","http://static.zongheng.com/upload/recommend/3e/55/3e55dd278e26e84297dce468d13b7c08.jpeg"],
+    isSelected: false,
+    imgUrls: ["http://static.zongheng.com/upload/recommend/bf/d9/bfd932880e339a2f866ab74aee523f05.jpeg", "http://static.zongheng.com/upload/recommend/3d/e1/3de17f75c19809757c843db62ba6cf0d.jpeg", "http://static.zongheng.com/upload/recommend/3e/55/3e55dd278e26e84297dce468d13b7c08.jpeg"],
     array: []
   },
   onLoad: function() {
@@ -16,9 +17,13 @@ Page({
   },
   onReady: function() {
     //页面初次渲染完成，一个页面调用一次
+
   },
   onHide: function() {
     //当navigateTo或者底部Tab切换时调用
+    this.setData({
+      isSelected: false
+    })
   },
   // onPullDownRefresh: function() {
   //   //下拉刷新
@@ -64,5 +69,22 @@ Page({
     obj3.flag = "都市生活";
     array[2] = obj3;
     return array;
-  }
+  },
+  goSearch: function() {
+    this.setData({
+      isSelected: true
+    });
+    setTimeout(function() {
+      wx.navigateTo({
+        url: '../search/search',
+        success: function(res) {
+
+        },
+        complete: function() {
+
+        }
+      })
+    }, 100);
+
+  },
 })

@@ -1,0 +1,17 @@
+<view class="content">
+  <view class="search">
+    <view class="search-input">
+      <image src="/images/search/search.png" style="width:24px;height:24px;margin-top:2px;"></image>
+      <input placeholder="请输入书名或者作者名" style="width:{{systemInfo.windowWidth-115}}px;height:30px;"></input>
+      <image src="/images/cancel.png" style="width:24px;height:24px; margin-top:2px;"></image>
+    </view>
+    <text class="search-cacel-btn">取消</text>
+  </view>
+  <view class="hr"></view>
+  <label>热门搜索</label>
+  <view class="hotSearch">
+    <view>1</view>
+    <view>2</view>
+    <view>3</view>
+  </view>
+</view>
