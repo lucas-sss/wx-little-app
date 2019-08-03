@@ -1,11 +1,16 @@
 const app = getApp()
 Page({
   data: {
-    key: "value"
+    key: "value",
+    systemInfo:null,
+    inputName: null,
+    hotSearchArr:[],
   },
   onLoad: function () {
     //一个页面只会触发一次
+    var array = this.initData();
     this.setData({
+      hotSearchArr: array,
       systemInfo: app.globalData.systemInfo
     })
   },
@@ -29,5 +34,51 @@ Page({
       path: "/pages/bookshelf"
 
     }
-  }
+  },
+  /**
+   * 输入框搜索
+   */
+  search: function(){ 
+    console.log(this.data.inputName)
+    //TODO 
+  },
+  /**
+   * 点击热词搜索
+   */
+  hotSearch:function(event){
+    var searchname = event.currentTarget.dataset.searchname;
+    console.log(searchname);
+  },
+  /**
+   * 输入触发
+   */
+  inputName: function(event){
+    this.setData({
+      inputName: event.detail.value
+    })
+  },
+  /**
+   * 清除搜索框
+   */
+  clearInput:function(){
+    this.setData({
+      inputName: null
+    })
+  },
+  initData:function(){
+    var array = [];
+    var obj1 = new Object();
+    obj1.name = "九星霸体诀";
+    array[0] = obj1;
+    var obj2 = new Object();
+    obj2.name = "三国新天子";
+    array[1] = obj2;
+    var obj3 = new Object();
+    obj3.name = "遮天";
+    array[2] = obj3;
+    var obj4 = new Object();
+    obj4.name = "锦衣夜行";
+    array[3] = obj4;
+    return array;
+  },
 })

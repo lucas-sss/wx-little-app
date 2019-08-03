@@ -1,17 +1,29 @@
 <view class="content">
   <view class="search">
-    <view class="search-input">
-      <image src="/images/search/search.png" style="width:24px;height:24px;margin-top:2px;"></image>
-      <input placeholder="请输入书名或者作者名" style="width:{{systemInfo.windowWidth-115}}px;height:30px;"></input>
-      <image src="/images/cancel.png" style="width:24px;height:24px; margin-top:2px;"></image>
+    <view class="search-input" style="width:{{systemInfo.windowWidth-75}}px">
+      <input placeholder="请输入书名或者作者名" style="width:{{systemInfo.windowWidth-100}}px;height:32px;" bindinput="inputName" value="{{inputName}}"></input>
+      <view class="search-cacel-view">
+        <image hidden="{{inputName ? '':'true'}}" src="/images/cancel.png" style="width:20px;height:20px; margin-top:5px;margin-right:5px;" bindtap="clearInput"></image>
+      </view>
     </view>
-    <text class="search-cacel-btn">取消</text>
+    <view class="search-btn-view" bindtap="search">
+      <image class="search-btn" src="/images/search/search{{inputName ? '-ready':''}}.png" style="width:24px;height:24px;margin-top:2px;"></image>
+    </view>
+
   </view>
   <view class="hr"></view>
-  <label>热门搜索</label>
-  <view class="hotSearch">
-    <view>1</view>
-    <view>2</view>
-    <view>3</view>
+  <view class= "center">
+    <label class="hotSearch-label">热门搜索</label>
   </view>
+  <view class="hotSearch">
+    <block wx:for="{{hotSearchArr}}" wx:for-index="idx" wx:for-item="itemName">
+      <view class="hotSearch-item center" bindtap="hotSearch" data-searchname='{{itemName.name}}'>
+        <text class="{{idx < 3 ? 'red-font':''}}">{{itemName.name}}</text>
+        <block wx:for="{{[3,2,1]}}">
+          <image wx:if="{{3 - idx > index}}" src="/images/heat.png" style="width:24px;height:24px;"></image>
+        </block>
+      </view>
+    </block>
+  </view>
+
 </view>
