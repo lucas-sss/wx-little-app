@@ -2,12 +2,16 @@
   display: flex;
   flex-direction: row;
   text-align: center;
+  margin-top: 5px;
 }
 
 .nav-item {
   width: 25%;
-  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
   font-size: 12px;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
 }
 
 .nav-selected{
@@ -35,9 +39,8 @@
 }
 
 .hr {
-  height: 10px;
+  height: 8px;
   background-color: #ccc;
-  margin-top: 5px;
   opacity: 0.2;
 }
 

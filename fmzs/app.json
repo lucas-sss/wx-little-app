@@ -4,6 +4,8 @@
     "pages/search/search",
     "pages/bookshelf/bookshelf",
     "pages/person/person",
+    "pages/detail/detail",
+    "pages/sort/sort",
     "pages/logs/logs"
   ],
   "window": {

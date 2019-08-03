@@ -12,25 +12,25 @@
   </view>
 
   <view class="nav">
-    <view class="nav-item">
+    <view class="nav-item {{!categorySelected ? '':'nav-selected'}}" bindtap="jumpPage" data-selected='categorySelected' data-gopage='sort'>
       <view>
         <image src="/images/index-nav/category.png" style="width:24px;height:24px;"></image>
       </view>
       <view>分类</view>
     </view>
-    <view class="nav-item">
+    <view class="nav-item {{!leaderboardSelected ? '':'nav-selected'}}" bindtap="jumpPage" data-selected='leaderboardSelected' data-gopage='sort'>
       <view>
         <image src="/images/index-nav/leaderboard.png" style="width:24px;height:24px;"></image>
       </view>
       <view>排行榜</view>
     </view>
-    <view class="nav-item">
+    <view class="nav-item {{!finishedSelected ? '':'nav-selected'}}" bindtap="jumpPage" data-selected='finishedSelected' data-gopage='sort'>
       <view>
         <image src="/images/index-nav/finish.png" style="width:24px;height:24px;"></image>
       </view>
       <view>完本</view>
     </view>
-    <view class="nav-item {{!isSelected ? '':'nav-selected'}}" bindtap="goSearch">
+    <view class="nav-item {{!searchSelected ? '':'nav-selected'}}" bindtap="jumpPage" data-selected='searchSelected' data-gopage='search'>
       <view>
         <image src="/images/index-nav/search-red.png" style="width:24px;height:24px;"></image>
       </view>

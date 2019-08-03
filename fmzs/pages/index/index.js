@@ -1,7 +1,10 @@
 const app = getApp()
 Page({
   data: {
-    isSelected: false,
+    categorySelected: false,
+    leaderboardSelected: false,
+    finishedSelected: false,
+    searchSelected: false,
     imgUrls: ["http://static.zongheng.com/upload/recommend/bf/d9/bfd932880e339a2f866ab74aee523f05.jpeg", "http://static.zongheng.com/upload/recommend/3d/e1/3de17f75c19809757c843db62ba6cf0d.jpeg", "http://static.zongheng.com/upload/recommend/3e/55/3e55dd278e26e84297dce468d13b7c08.jpeg"],
     array: []
   },
@@ -21,9 +24,9 @@ Page({
   },
   onHide: function() {
     //当navigateTo或者底部Tab切换时调用
-    this.setData({
-      isSelected: false
-    })
+    // this.setData({
+    //   isSelected: false
+    // })
   },
   // onPullDownRefresh: function() {
   //   //下拉刷新
@@ -70,21 +73,26 @@ Page({
     array[2] = obj3;
     return array;
   },
-  goSearch: function() {
+  jumpPage: function (event) {
+    var selected = event.currentTarget.dataset.selected;
+    var gopage = event.currentTarget.dataset.gopage;
     this.setData({
-      isSelected: true
+      [selected]: true
     });
-    setTimeout(function() {
+    setTimeout((function () {
+      this.setData({
+        [selected]: false
+      });
+      // TODO
       wx.navigateTo({
-        url: '../search/search',
-        success: function(res) {
+        url: '../' + [gopage]+'/'+[gopage],
+        success: function (res) {
 
         },
-        complete: function() {
+        complete: function () {
 
         }
       })
-    }, 100);
-
+    }).bind(this, selected), 150);
   },
 })
